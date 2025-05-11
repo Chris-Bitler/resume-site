@@ -3,9 +3,9 @@ import { getPostSlugs, getPostBySlug } from "../../../lib/posts";
 import { notFound } from "next/navigation";
 
 type BlogPostProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export async function generateStaticParams() {
