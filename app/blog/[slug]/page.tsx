@@ -1,3 +1,4 @@
+import Markdown from "react-markdown";
 import Layout from "../../components/Layout";
 import { getPostSlugs, getPostBySlug } from "../../../lib/posts";
 import { notFound } from "next/navigation";
@@ -41,7 +42,9 @@ const BlogPost = async ({ params }: BlogPostProps) => {
           </header>
 
           <div className="prose prose-lg max-w-none">
-            <div className="whitespace-pre-wrap">{content}</div>
+            <div className="whitespace-pre-wrap">
+              <Markdown>{content}</Markdown>
+            </div>
           </div>
         </article>
       </div>
