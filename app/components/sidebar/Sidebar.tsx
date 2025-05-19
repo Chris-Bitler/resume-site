@@ -53,8 +53,8 @@ const Sidebar: React.FC = () => {
         Christopher Bitler
       </h2>
       <p className={styles.title}>Senior Software Engineer</p>
-      <Link href="mailto:chris@cbitler.io">
-        <p className={styles.email}>chris@cbitler.io</p>
+      <Link href="mailto:cbitler@cbitler.io">
+        <p className={styles.email}>cbitler@cbitler.io</p>
       </Link>
       <div className={styles.divider}></div>
       <img
