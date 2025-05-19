@@ -1,4 +1,4 @@
----c 
+---
 title: 'Test post'
 slug: 'slug'
 date: '2025-05-10'
