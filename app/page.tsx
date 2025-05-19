@@ -1,4 +1,4 @@
-import Layout from './components/Layout';
+import Layout from "./components/Layout";
 
 export default function Home() {
   return (
@@ -8,20 +8,20 @@ export default function Home() {
           <h1 className="text-3xl font-bold text-gray-800 mb-6">Welcome</h1>
           <div className="prose">
             <p className="text-gray-700">
-              I am a software engineer with seven years of experience,
-              specializing in delivering high-quality software solutions. Proven
-              in tackling complex challenges and building innovative features to
-              enhance user experience. Committed to continuous learning and
-              growth, with a focus on advancing to Senior Software Engineer.
-              Excels in collaboration, driving successful project completion
-              through teamwork and communication. Detail-oriented engineer who
-              keeps projects on track by identifying potential issues early. Uses
-              analytical thinking to solve complex problems and develop innovative
-              solutions.
+              Senior software engineer specializing in rapidly decoding and
+              navigating unfamiliar codebases across diverse technology stacks
+              and organizational boundaries. Expert at proactively debugging
+              complex, system-wide issues spanning multiple teams and platforms.
+              Known for breaking down silos by diving deep into legacy systems,
+              third-party integrations, and cross-platform architectures to
+              deliver high-impact solutions. Repeatedly recognized for
+              automating workflows, improving developer productivity, and
+              shipping innovative solutions ahead of schedule through
+              exceptional cross-team technical versatility
             </p>
           </div>
         </div>
       </div>
     </Layout>
   );
-} 
+}

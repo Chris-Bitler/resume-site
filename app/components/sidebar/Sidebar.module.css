@@ -1,0 +1,116 @@
+.resume-link {
+  font-weight: bold !important;
+}
+.sidebarContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.smallSidebar {
+  top: 0;
+  left: 0;
+  width: 64px;
+  background-color: #084c41;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  z-index: 1200;
+}
+
+.drawerButton {
+  padding-top: 1rem !important;
+  position: relative;
+  top: 0;
+  left: 0;
+  color: white !important;
+}
+
+.sidebarDrawer {
+  height: 100%;
+}
+
+.sidebarDrawerPaper {
+  box-sizing: border-box;
+  width: 240px;
+  background-color: #084c41 !important;
+  border-right: none;
+  position: static !important;
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.name-padding {
+  padding-top: 20px;
+}
+
+.title, .email {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.divider {
+  width: 5rem;
+  height: 0.125rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 1rem auto 1rem;
+}
+
+.profileImage {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 9999px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.profileImage {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 9999px;
+  margin: 0 auto;
+  margin-bottom: 10px !important;
+  object-fit: cover;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.socialLink {
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.socialLink:hover {
+  opacity: 1;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navLink {
+  display: block;
+}
+
+.navLink:hover {
+  color: #d1d5db;
+}
+
+.activeLink {
+  font-weight: bold;
+} 

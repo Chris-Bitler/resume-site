@@ -1,23 +1,23 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Sidebar from './Sidebar';
+import React from "react";
+import Sidebar from "./sidebar/Sidebar";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 type LayoutProps = {
-    children: React.ReactNode;
+  children: React.ReactNode;
 };
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  // Use default MUI theme
   return (
-    <div className="flex min-h-screen">
-      <div className="w-1/5 bg-[#084c41] min-h-screen">
+    <ThemeProvider theme={createTheme()}>
+      <div className="flex min-h-screen">
         <Sidebar />
+        <div>{children}</div>
       </div>
-      <div className="w-4/5">
-        {children}
-      </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
-export default Layout; 
+export default Layout;

@@ -6,36 +6,56 @@ import { Box, Drawer, IconButton, useMediaQuery } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
 import { usePathname } from "next/navigation";
 import styles from "./Sidebar.module.css";
 import { useTheme } from "@mui/material/styles";
+import classNames from "classnames";
 
 const Sidebar: React.FC = () => {
   const pathname = usePathname();
   const [openOnMobile, setOpenOnMobile] = useState(false);
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const variant = isMobile ? "temporary" : "permanent";
+  const open = isMobile ? openOnMobile : true;
 
   const handleDrawerToggle = () => {
     setOpenOnMobile(!openOnMobile);
   };
 
   const drawerButton = (
+    <IconButton
+      color="inherit"
+      aria-label="open drawer"
+      edge="start"
+      onClick={handleDrawerToggle}
+      className={styles.drawerButton}
+    >
+      <MenuIcon />
+    </IconButton>
+  );
+
+  const drawerButtonWithContainer = (
     <Box className={styles.smallSidebar} sx={{ display: { sm: "none" } }}>
-      <IconButton
-        color="inherit"
-        aria-label="open drawer"
-        edge="start"
-        onClick={handleDrawerToggle}
-        className={styles.drawerButton}
-      >
-        <MenuIcon />
-      </IconButton>
+      {drawerButton}
     </Box>
   );
 
   const drawerContent = (
     <div className={styles.sidebarContainer}>
-      <h2 className={styles.name}>Christopher Bitler</h2>
+      <h2
+        className={classNames(styles.name, {
+          [styles["name-padding"]]: !isMobile,
+        })}
+      >
+        Christopher Bitler
+      </h2>
       <p className={styles.title}>Senior Software Engineer</p>
+      <Link href="mailto:chris@cbitler.io">
+        <p className={styles.email}>chris@cbitler.io</p>
+      </Link>
       <div className={styles.divider}></div>
       <img
         src="/chris.png"
@@ -99,13 +119,9 @@ const Sidebar: React.FC = () => {
     </div>
   );
 
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const variant = isMobile ? 'temporary' : 'permanent';
-  const open = isMobile ? openOnMobile : true;
   return (
     <div className={styles.sidebarContainer}>
-      {isMobile && drawerButton}
+      {isMobile && drawerButtonWithContainer}
       <Drawer
         variant={variant}
         open={open}
@@ -118,10 +134,11 @@ const Sidebar: React.FC = () => {
           keepMounted: true, // Better open performance on mobile
         }}
       >
+        {isMobile && drawerButton}
         {drawerContent}
       </Drawer>
     </div>
   );
 };
 
-export default Sidebar; 
+export default Sidebar;
