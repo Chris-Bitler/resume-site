@@ -4,7 +4,7 @@ const HomepageContent = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Box sx={{ display: 'flex' }}>
-        <Box sx={{ width: '50%' }}>
+        <Box>
           <Typography variant="h3" component="h1" sx={{ mb: 3, color: 'text.primary', fontWeight: 'bold' }}>
             Welcome
           </Typography>

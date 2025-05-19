@@ -1,10 +1,11 @@
+import { Box } from '@mui/material';
 import Layout from "./components/Layout";
 
 export default function Home() {
   return (
     <Layout>
       <div className="h-full p-8 flex">
-        <div className="w-1/2">
+        <Box  sx={{ width: { xs: '100%', md: '50%' }}}>
           <h1 className="text-3xl font-bold text-gray-800 mb-6">Welcome</h1>
           <div className="prose">
             <p className="text-gray-700">
@@ -20,7 +21,7 @@ export default function Home() {
               exceptional cross-team technical versatility
             </p>
           </div>
-        </div>
+        </Box>
       </div>
     </Layout>
   );
