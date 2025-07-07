@@ -5,3 +5,21 @@
 .download-button-container {
     margin-bottom: 2rem;
 }
+
+.resumeButton {
+    background-color: #084c41 !important;
+    text-transform: none;
+    font-weight: 500;
+}
+
+.resumeButton:hover {
+    background-color: #063c33 !important;
+}
+
+.pdfIcon {
+    color: #d32f2f;
+}
+
+.docxIcon {
+    color: #1976d2;
+}

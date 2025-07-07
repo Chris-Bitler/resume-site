@@ -9,33 +9,25 @@ import {
   List,
   ListItem,
   ListItemText,
-  Button
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Layout from '../components/Layout';
 
 import styles from './Experience.module.css';
+import ResumeDropdown from './ResumeDropdown';
 
 const ExperienceSection = () => {
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'resume.pdf';
-    link.click();
-  };
-
   return (
     <Layout>
       <div className={styles['page-padding']}>
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Engineering Experience</h1>
       <div className={styles['download-button-container']}>
-        <Button variant="contained" color="primary" endIcon={<FileDownloadIcon />} onClick={handleDownload}>Download Resume</Button>
+        <ResumeDropdown />
       </div>
       <Accordion defaultExpanded={true}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography variant="h6">
-            Intuit – Senior Software Engineer (2021–2025), Software Engineer (2019–2021)
+            Intuit – Software Engineer 2 (2021–2025), Software Engineer (2019–2021)
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
