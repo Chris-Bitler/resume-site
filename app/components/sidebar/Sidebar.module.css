@@ -1,6 +1,265 @@
+/* Navbar styles */
+.navbar {
+  background-color: #084c41;
+  color: white;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbarContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Left section with profile and name */
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  left: 2rem;
+}
+
+.navProfileImage {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
+.nameSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.navName {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.navTitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Desktop navigation */
+.desktopNav {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: #d1d5db;
+}
+
+.activeLink {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.activeLink::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: white;
+  z-index: -1;
+}
+
+/* Right section with social links and email */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: absolute;
+  right: 2rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.socialLink:hover {
+  opacity: 1;
+}
+
+.emailLink {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.emailLink:hover {
+  color: white;
+}
+
+/* Mobile menu styles */
+.mobileMenuContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.mobileMenuButton {
+  color: white !important;
+}
+
+.mobileDropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background-color: #084c41;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  z-index: 1300;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavLink {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  transition: background-color 0.2s ease;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileNavLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobileNavLink:last-child {
+  border-bottom: none;
+}
+
+.mobileSocialRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mobileEmailRow {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mobileEmailLink {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.mobileEmailLink:hover {
+  color: white;
+}
+
+/* Responsive behavior */
+@media (max-width: 960px) {
+  .desktopNav,
+  .rightSection {
+    display: none;
+  }
+  
+  .navbarContent {
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+  
+  .leftSection {
+    position: static;
+    left: auto;
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbarContent {
+    padding: 0.75rem 1rem;
+    justify-content: flex-start;
+  }
+  
+  .leftSection {
+    position: static;
+    left: auto;
+  }
+  
+  .navName {
+    font-size: 1.125rem;
+  }
+  
+  .navTitle {
+    font-size: 0.75rem;
+  }
+  
+  .navProfileImage {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Legacy styles (kept for backward compatibility if needed) */
 .resume-link {
   font-weight: bold !important;
 }
+
 .sidebarContainer {
   text-align: center;
   display: flex;
@@ -67,50 +326,6 @@
   height: 8rem;
   border-radius: 9999px;
   margin: 0 auto;
-  margin-bottom: 10px;
-  object-fit: cover;
-}
-
-.profileImage {
-  width: 8rem;
-  height: 8rem;
-  border-radius: 9999px;
-  margin: 0 auto;
   margin-bottom: 10px !important;
   object-fit: cover;
 }
-
-.socialLinks {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.socialLink {
-  color: white;
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
-}
-
-.socialLink:hover {
-  opacity: 1;
-}
-
-.navList {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.navLink {
-  display: block;
-}
-
-.navLink:hover {
-  color: #d1d5db;
-}
-
-.activeLink {
-  font-weight: bold;
-} 

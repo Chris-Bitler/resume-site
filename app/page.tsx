@@ -4,10 +4,10 @@ import Layout from "./components/Layout";
 export default function Home() {
   return (
     <Layout>
-      <div className="h-full p-8 flex">
-        <Box  sx={{ width: { xs: '100%', md: '50%' }}}>
+      <div className="h-full p-8 flex justify-center items-center">
+        <Box sx={{ width: { xs: '100%', md: '70%' }, textAlign: 'center' }}>
           <h1 className="text-3xl font-bold text-gray-800 mb-6">Welcome</h1>
-          <div className="prose">
+          <div className="prose prose-lg mx-auto">
             <p className="text-gray-700">
               Senior software engineer specializing in rapidly decoding and
               navigating unfamiliar codebases across diverse technology stacks
