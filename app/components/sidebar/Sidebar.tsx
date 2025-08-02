@@ -2,22 +2,18 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { IconButton, useMediaQuery } from "@mui/material";
+import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import { usePathname } from "next/navigation";
 import styles from "./Sidebar.module.css";
-import { useTheme } from "@mui/material/styles";
 
 const Sidebar: React.FC = () => {
   const pathname = usePathname();
   const [openOnMobile, setOpenOnMobile] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleDropdownToggle = () => {
     setOpenOnMobile(!openOnMobile);
