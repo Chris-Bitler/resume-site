@@ -27,11 +27,11 @@ const ResumeDropdown: React.FC = () => {
     setAnchorEl(null);
   };
 
-  const handleDownload = (format: 'pdf' | 'docx') => {
-    const url = format === 'pdf' ? '/resume.pdf' : '/resume.docx';
+  const handleDownload = (format: 'pdf') => {
+    const url = '/Bitler_Christopher_Resume_9-2026.pdf';
     const link = document.createElement('a');
     link.href = url;
-    link.download = `Christopher_Bitler_Resume.${format}`;
+    link.download = `Bitler_Christopher_Resume_9-2026.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -66,12 +66,6 @@ const ResumeDropdown: React.FC = () => {
             <PdfIcon className={styles.pdfIcon} />
           </ListItemIcon>
           <ListItemText>PDF Version</ListItemText>
-        </MenuItem>
-        <MenuItem onClick={() => handleDownload('docx')}>
-          <ListItemIcon>
-            <DocIcon className={styles.docxIcon} />
-          </ListItemIcon>
-          <ListItemText>DOCX Version</ListItemText>
         </MenuItem>
       </Menu>
     </>
