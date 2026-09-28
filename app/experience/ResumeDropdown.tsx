@@ -11,7 +11,6 @@ import {
 import {
   KeyboardArrowDown as KeyboardArrowDownIcon,
   PictureAsPdf as PdfIcon,
-  Description as DocIcon,
 } from '@mui/icons-material';
 import styles from './Experience.module.css';
 
@@ -27,7 +26,7 @@ const ResumeDropdown: React.FC = () => {
     setAnchorEl(null);
   };
 
-  const handleDownload = (format: 'pdf') => {
+  const handleDownload = () => {
     const url = '/Bitler_Christopher_Resume_9-2026.pdf';
     const link = document.createElement('a');
     link.href = url;
@@ -61,7 +60,7 @@ const ResumeDropdown: React.FC = () => {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={() => handleDownload('pdf')}>
+        <MenuItem onClick={() => handleDownload()}>
           <ListItemIcon>
             <PdfIcon className={styles.pdfIcon} />
           </ListItemIcon>
